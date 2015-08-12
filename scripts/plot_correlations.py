@@ -16,6 +16,7 @@ if __name__ == "__main__":
 
     data = np.load(args.npz_file)
     corr_coefs = data['corr_coefs']
+    corr_coefs = corr_coefs[~np.isnan(corr_coefs)]
 
     plt.hist(corr_coefs, 100)
     plt.xlabel('correlation coefficients')

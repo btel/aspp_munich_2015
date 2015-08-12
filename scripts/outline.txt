@@ -33,8 +33,13 @@ New skills: argparse, npz files, bash scripts
 New skills: subprocess
 
 * implement a batch processing script using `subprocess`
-* (discussion) discuss strategies of linking the batch results to plotting
-* write merge script (or add merging to plotting script)
+* (discussion) discuss strategies of linking the batch results with plotting:
+    - extend batch script: batch skip can not be universal; we might not keep the intermediate single-cell results
+    - extend plotting script: less flexibility in terms what is plotted and how
+    - write a merge script: flexible, but cause fragmentation
+    - integrate it into the automation tool : can track individual changes; works best for long-running analysis
+    
+* (exercise) write merge script (or add merging to plotting script)
 * test scripts on command line
 * (exercise) update batch script
 
