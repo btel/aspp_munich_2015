@@ -18,6 +18,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     parser.add_argument('mat_file')
+    parser.add_argument('--save')
     
     args = parser.parse_args()
 
@@ -29,3 +30,9 @@ if __name__ == "__main__":
         for spt2 in spike_times[i+1:]:
             r = calc_corr_coef(spt1[0], spt2[0])
             corr_coefs.append(r)
+
+    if args.save:
+        np.savez(args.save, corr_coefs = corr_coefs)
+    else:
+        plt.hist(corr_coefs, 100)
+        plt.show()

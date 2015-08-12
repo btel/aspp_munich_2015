@@ -1,0 +1,52 @@
+1) Intro (20 min)
+
+* introduction to workflows
+* intro to neuroscience
+* setting-up collaborative git repository
+
+2) Single-cell analysis (45 min)
+
+New skills: reading mat files
+
+* choose a single mat file and load it using `scipy.io.loadmat`
+* get spike times from the mat files
+* write a script loading two spike train from file
+* (optional) plot the spike trains
+* implement a simple correlation measure
+* (exercise) calculate all pairwise correlations 
+* (exercise) plot the histogram
+
+3) Building first workflow (45 min)
+
+New skills: argparse, npz files, bash scripts
+
+* use `argparse` to define parameters (input file) 
+* run the script from bash
+* define a new (optional) parameter for storing data
+* store correlation coefficients in numpy/pickle or text
+* (exercise) add `argparse` parameter - bin size
+* (exercise) write script which reads correlation files and plots a histogram
+* write first workflow to bash script (two lines)
+
+4) Batch processing (45 min)
+
+New skills: subprocess
+
+* implement a batch processing script using `subprocess`
+* (discussion) discuss strategies of linking the batch results to plotting
+* write merge script (or add merging to plotting script)
+* test scripts on command line
+* (exercise) update batch script
+
+5) Automation (30 min)
+
+New skills: make, doit
+
+* automation tools: Make and doit
+* use doit for automation: write a simple dodo.py file
+
+Extra exercises (in free time if any):
+
+* allow the merge script to take list of files; test on two provided lists
+* update plotting script to show histogram of two groups 
+* update automation script
