@@ -32,6 +32,7 @@ New skills: argparse, npz files, bash scripts
 
 New skills: subprocess
 
+* separate scripts/results/figures/workflows directories
 * implement a batch processing script using `subprocess`
 * (discussion) discuss strategies of linking the batch results with plotting:
     - extend batch script: batch skip can not be universal; we might not keep the intermediate single-cell results
@@ -45,12 +46,19 @@ New skills: subprocess
 
 5) Automation (30 min)
 
-New skills: make, doit
+New skills: make, doit, pathlib
 
 * automation tools: Make and doit
-* use doit for automation: write a simple dodo.py file
+* use doit for automation: write a simple `dodo.py` file
+    * define a new task for analysing a single file
+    * run the workflow (possibly with `doit -d ...`), check how deps are handled
+    * use `path.glob` for listing all data files
+    * use generator tasks to implement batch processing in `dodo.py`
+    * define `task_merge_correlations`
+    * (exercise) define `task_plot_correlations`
+* comparison with `joblib`, `scons`, `drake`, `luigi` (show sample scripts)
 
-Extra exercises (in free time if any):
+6) Extra exercises (in free time if any):
 
 * allow the merge script to take list of files; test on two provided lists
 * update plotting script to show histogram of two groups 
