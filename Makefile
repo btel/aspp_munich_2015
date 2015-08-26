@@ -7,7 +7,9 @@ clean:
 	rm -fr results/*
 	rm docs/intro.slides.html
 
-docs:
+docs: docs/intro.slides.html
+
+docs/intro.slides.html: docs/intro.ipynb
 	ipython nbconvert docs/intro.ipynb --to slides --output=docs/intro
 
 data:
