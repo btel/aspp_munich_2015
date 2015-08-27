@@ -8,6 +8,7 @@ clean:
 	rm -fr results/*
 	rm -f docs/intro.slides.html
 	rm -fr docs/reveal.js
+	rm -fr figures/*
 
 docs: docs/intro.slides.html
 
