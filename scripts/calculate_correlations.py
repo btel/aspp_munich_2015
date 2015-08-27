@@ -4,13 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import io
-
-def calc_corr_coef(spikes1, spikes2, bin_size=5):
-    idx1 = np.searchsorted(spikes1, spikes2)
-    idx2 = np.searchsorted(spikes1, spikes2 + bin_size)
-    n_coincidences = np.sum(idx2 - idx1)
-    r = n_coincidences / np.sqrt(len(spikes1) * len(spikes2))
-    return r
+from pyNeuro.analysis import calc_corr_coef
 
 if __name__ == "__main__":
 

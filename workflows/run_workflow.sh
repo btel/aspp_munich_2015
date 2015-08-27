@@ -1,4 +1,5 @@
 #!/bin/bash
+export PYTHONPATH=../libs/:$PYTHONPATH
 
 mkdir -p ../figures ../results
 SCRIPTS=../scripts
