@@ -1,0 +1,92 @@
+1) Intro (20 min)
+
+* introduction to workflows
+* intro to neuroscience
+
+2) Single-cell analysis (45 min)
+
+New skills: reading mat files
+
+* setting-up collaborative git repository
+* choose a single mat file and load it using `scipy.io.loadmat`
+* get spike times from the mat files
+* write a script loading two spike train from file
+* (optional) plot the spike trains
+* implement a simple correlation measure
+* (exercise) calculate all pairwise correlations 
+* (exercise) plot the histogram
+
+Problem:
+
+From your collaborators you obtained more data (hurray!), but its stored
+in a proprietary format. Fortunately, the hardware manufacturer provides
+scripts to read the data into matlab. You would like to analyse the data
+using your correlation script. How would you do that?
+
+
+3) Building first workflow (45 min)
+
+New skills: argparse, npz files, bash scripts
+
+* use `argparse` to define parameters (input file) 
+* run the script from bash
+* define a new (optional) parameter for storing data
+* store correlation coefficients in numpy/pickle or text
+* (exercise) add `argparse` parameter - bin size
+* (exercise) write script which reads correlation files and plots a histogram
+* write first workflow to bash script (two lines)
+
+Problem:
+
+On the web you found a program that calculates efficiently correlations. It is
+a closed-sourced binary (convenienty already compiled for your system) that
+takes a comma-separated spike times as its input (one neuron per line) and
+saves the correlations in a table stored in CSV format. How would you integrate
+this tool into your workflow? How would you test its outputs?
+
+4) Batch processing (45 min)
+
+New skills: subprocess
+
+* separate scripts/results/figures/workflows directories
+* implement a batch processing script using `subprocess`
+* (discussion) discuss strategies of linking the batch results with plotting:
+    - extend batch script: batch skip can not be universal; we might not keep the intermediate single-cell results
+    - extend plotting script: less flexibility in terms what is plotted and how
+    - write a merge script: flexible, but causes fragmentation
+    - integrate it into the automation tool : can track individual changes; works best for long-running analysis
+    
+* (exercise) write merge script (or add merging to plotting script)
+* test scripts on command line
+* (exercise) update batch script
+
+Problem:
+
+After running the batch analysis, you noticed that the distribution of correlation coefficient is heavily skewed. 
+You blame it on faulty recordings. How would you identify the outlier recordings?
+
+5) Automation (30 min)
+
+New skills: make, doit, pathlib
+
+* automation tools: Make and doit
+* use doit for automation: write a simple `dodo.py` file
+    * define a new task for analysing a single file
+    * run the workflow (possibly with `doit -d ...`), check how deps are handled
+    * use `pathlib` globing for listing all data files
+    * use generator tasks to implement batch processing in `dodo.py`
+    * define `task_merge_correlations`
+    * (exercise) define `task_plot_correlations`
+* (discussion) bash vs doit - pros and cons
+* comparison with `joblib`, `scons`, `drake`, `luigi` (show sample scripts)
+
+Problem:
+
+One of the analysis step requires loads of computation time. You decided to "outsource" it to a computing cluster
+at your insitution. How would you automate the process?
+
+6) Extra exercises (in free time if any):
+
+* allow the merge script to take list of files; test on two provided lists
+* update plotting script to show histogram of two groups 
+* update automation script
