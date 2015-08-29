@@ -15,6 +15,7 @@ distclean : clean
 	rm -f scripts/*
 	rm -f workflows/*
 	rm -fr .git
+	rm -fr libs/pyNeuro/__pycache__
 	git init
 
 docs: docs/intro.slides.html
