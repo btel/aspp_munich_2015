@@ -11,9 +11,9 @@ clean:
 	rm -fr figures/*
 	
 distclean : clean
-	rm data/Data.zip
+	rm -f data/Data.zip
 	rm  scripts/*
-	rm  workflows
+	rm  workflows/*
 	rm -fr .git
 	git init
 
