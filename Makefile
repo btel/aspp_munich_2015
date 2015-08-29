@@ -9,6 +9,13 @@ clean:
 	rm -f docs/intro.slides.html
 	rm -fr docs/reveal.js
 	rm -fr figures/*
+	
+distclean : clean
+	rm data/Data.zip
+	rm  scripts/*
+	rm  workflows
+	rm -fr .git
+	git init
 
 docs: docs/intro.slides.html
 
