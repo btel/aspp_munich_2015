@@ -29,6 +29,7 @@ data : data/retina
 docs/intro.slides.html: docs/intro.ipynb
 	ipython nbconvert docs/intro.ipynb --to slides --output=docs/intro
 	patch -p1 docs/intro.slides.html < docs/reveal_initialize.patch
+	rm docs/intro.slides.html.orig
 	git submodule update
 
 data/retina:
