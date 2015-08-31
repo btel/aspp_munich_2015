@@ -1,0 +1,14 @@
+*** docs/intro.slides.html	2015-08-31 11:05:25.938166663 +0200
+--- docs/intro.slides.patched.html	2015-08-31 11:05:15.574167078 +0200
+***************
+*** 2909,2914 ****
+--- 2909,2917 ----
+  controls: true,
+  progress: true,
+  history: true,
++ width : 1920,
++ height : 1080,
++ margin : 0,
+  
+  theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+  transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
