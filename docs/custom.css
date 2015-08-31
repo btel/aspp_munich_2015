@@ -9,6 +9,10 @@
 .reveal blockquote {
     width : 100%;
     margin-left : 0px;
+    box-shadow : none;
+    font-style : normal;
+    border-left : 10px solid #EEE;
+    padding-left : 30px;
 }
 
 .reveal .slides {
