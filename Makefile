@@ -11,12 +11,9 @@ clean:
 	rm -fr figures/*
 	
 distclean : clean
-	git push
-	git clean -x
 	rm -f data/Data.zip
 	rm -f scripts/*
 	rm -f workflows/*
-	rm -fr .git
 	rm -fr libs/pyNeuro/__pycache__
 
 docs: docs/intro.slides.html
