@@ -21,6 +21,8 @@ def calc_corr_coef(spikes1, spikes2, bin_size=5):
     r : float
         Value of Pearson correlation coefficient between the spike times."""
 
+    if len(spikes1) == 0 or len(spikes2) == 0:
+        return 0
 
     idx1 = np.searchsorted(spikes1, spikes2)
     idx2 = np.searchsorted(spikes1, spikes2 + bin_size)
