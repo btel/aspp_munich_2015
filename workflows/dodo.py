@@ -26,8 +26,8 @@ def task_calculate_correlations():
 def task_merge_correlations():
     output = str(root / 'results' / 'merged_correlations.npz')
     return {
-            'actions'  : ['python merge_script.py '
-                         '%(dependencies)s %(targets)s'],
+            'actions'  : ['python merge_correlations.py '
+                         '%(dependencies)s --save %(targets)s'],
             'file_dep' : result_files,
             'targets'  : [output]
            }
