@@ -1,0 +1,28 @@
+1) Data exploration
+
+* clone repository to your home directory:
+
+  git clone yourusername@python.g-node.org:/home/bartosz/lab_bench
+
+* copy data to `data` subdir:
+
+  cp ~/lab-bench-data/* ~/lab_bench/data
+
+* set path for extra libaries:
+
+  echo "export PYTHONPATH=/home/student/lab_bech/libs" >> ~/.bashrc
+  source ~/.bashrc
+
+* create a new branch (use unique names for your team):
+
+  git checkout -b myteam_pairwise_correlations
+
+* in the script we worked on during the lecture, calculate all pairwise correlations between all neurons (use nested for loops and plot the histogram)
+
+* commit and push your branch back to `origin`:
+  
+  git push origin myteam_pairwise_correlations
+
+2) Workflow
+
+
