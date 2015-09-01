@@ -18,9 +18,6 @@ distclean : clean
 	rm -f workflows/*
 	rm -fr .git
 	rm -fr libs/pyNeuro/__pycache__
-	git init
-	git add * .gitmodules .gitignore
-	git commit -m 'initial commit'
 
 docs: docs/intro.slides.html
 
