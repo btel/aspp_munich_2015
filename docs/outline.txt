@@ -44,46 +44,35 @@ takes a comma-separated spike times as its input (one neuron per line) and
 saves the correlations in a table stored in CSV format. How would you integrate
 this tool into your workflow? How would you test its outputs?
 
-4) Batch processing (45 min)
+4) Automation (30 min)
+
+New skills: make, doit
+
+* implement the `task_open_data` and `task_plot_correlations_histogram`
+* run the workflow (possibly with `doit -d ...`)
+* delete the figure to show that only second step is re-executed
+
+Problem:
+
+One of the analysis step requires loads of computation time. You decided to "outsource" it to a computing cluster
+at your insitution. How would you automate the process?
+
+5) Batch processing (45 min)
 
 New skills: subprocess
 
-* separate scripts/results/figures/workflows directories
-* implement a batch processing script using `subprocess`
-* (discussion) discuss strategies of linking the batch results with plotting:
-    - extend batch script: batch skip can not be universal; we might not keep the intermediate single-cell results
-    - extend plotting script: less flexibility in terms what is plotted and how
-    - write a merge script: flexible, but causes fragmentation
-    - integrate it into the automation tool : can track individual changes; works best for long-running analysis
-    
-* (exercise) write merge script (or add merging to plotting script)
-* test scripts on command line
-* (exercise) update batch script
+* use generator tasks to implement batch processing in `dodo.py`
+* run doit, remove single file, show  that only that one is re-generated
+* (exercises) implement `merge_correlations.py`
+* (exercises) define `task_merge_correlations` in `dodo.py`
+* (exercises) update `plot_correlations_histogram` target to plot merged correlations
+* run doit with `plot_correlations_histogram` target
 
 Problem:
 
 After running the batch analysis, you noticed that the distribution of correlation coefficient is heavily skewed. 
 You blame it on faulty recordings. How would you identify the outlier recordings?
 
-5) Automation (30 min)
-
-New skills: make, doit, pathlib
-
-* automation tools: Make and doit
-* use doit for automation: write a simple `dodo.py` file
-    * define a new task for analysing a single file
-    * run the workflow (possibly with `doit -d ...`), check how deps are handled
-    * use `pathlib` globing for listing all data files
-    * use generator tasks to implement batch processing in `dodo.py`
-    * define `task_merge_correlations`
-    * (exercise) define `task_plot_correlations`
-* (discussion) bash vs doit - pros and cons
-* comparison with `joblib`, `scons`, `drake`, `luigi` (show sample scripts)
-
-Problem:
-
-One of the analysis step requires loads of computation time. You decided to "outsource" it to a computing cluster
-at your insitution. How would you automate the process?
 
 6) Extra exercises (in free time if any):
 
