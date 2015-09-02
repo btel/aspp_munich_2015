@@ -16,6 +16,21 @@ distclean : clean
 	rm -f workflows/*
 	rm -fr libs/pyNeuro/__pycache__
 
+pageclean: docs
+	rm -fr data
+	rm -fr workflows
+	rm -fr scripts
+	rm -fr libs
+	rm -fr results
+	rm -fr figures
+	mv docs/intro.slides.html index.html
+	mv docs/reveal.js .
+	mv docs/custom.css .
+	rm -fr reveal.js/.git
+	mv docs/images .
+	rm -fr docs
+	rm Makefile
+
 docs: docs/intro.slides.html
 
 data : data/retina
