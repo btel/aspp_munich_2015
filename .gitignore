@@ -1,3 +1,5 @@
 *.sw[opc]
 .drake*
 .python-version
+data/*.mat
+results/*.npz
