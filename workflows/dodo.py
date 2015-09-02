@@ -16,7 +16,7 @@ def mk_plottargetname(p):
     directory, filename = os.path.split(p)
     core, ext = os.path.splitext(filename)
     filename = core + '.png'
-    return os.path.join('../results', filename)
+    return os.path.join('../figures', filename)
 
 src = glob.glob('../data/data_02*.mat')
 targets = list(map(mk_targetname, src))
