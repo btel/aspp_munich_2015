@@ -31,7 +31,7 @@ pageclean: docs
 	rm -fr docs
 	rm Makefile
 
-docs: docs/intro.slides.html
+docs: docs/intro.slides.html docs/lecture_notes.html
 
 data : data/retina
 
@@ -40,6 +40,9 @@ docs/intro.slides.html: docs/intro.ipynb
 	patch -p1 docs/intro.slides.html < docs/reveal_initialize.patch
 	rm docs/intro.slides.html.orig
 	git submodule update
+
+docs/lecture_notes.html : docs/lecture_notes.md
+	pandoc $< -o $@ -s -c pandoc.css --toc
 
 data/retina:
 	unzip data/Data.zip -d data
