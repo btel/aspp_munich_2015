@@ -1,0 +1,32 @@
+.reveal {
+    font-size: 50px
+}
+
+.reveal h2 {
+    font-size : 1.5em
+}
+
+.reveal blockquote {
+    width : 100%;
+    margin-left : 0px;
+    box-shadow : none;
+    font-style : normal;
+    border-left : 10px solid #EEE;
+    padding-left : 30px;
+}
+
+.reveal .slides {
+}
+
+
+div .input_prompt {
+    display : none;
+}
+
+div.output_prompt {
+    display : none;
+}
+
+div.input_area {
+    display : none;
+}

@@ -1,0 +1,3 @@
+*.sw[opc]
+.drake*
+.python-version
