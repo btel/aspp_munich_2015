@@ -6,6 +6,8 @@ modified: 2015-09-03 11:06:06
 categories: journal
 ---
 
+(You can find the source of this document on [github](https://github.com/btel/aspp_munich_2015/blob/master/docs/lecture_notes.md). Please make a pull request when you find an error or want to to contribute otherwise.)
+
 In the lecture I will try to take an integrative approach to using python in computational science. You shouldn't treat my lecture as the sets of hard standards, but rather my personal view on how to use python and other tools in everyday lab work. Due to my background the lecture will be necessarily biased toward experimental labs, but I hope that many of its ideas can be also used by theoreticians.
 
 It is the first time that we are proposing this lecture at the Python school. Therefore, I would like to ask you for some extra feedback during and after the lecture. Please do not hesitate to interrupt me to ask questions, make comments or disagree. We are all here to learn from each other - so please forget the standard teacher-pupil relationship.
