@@ -1,5 +1,5 @@
 #!/bin/bash
-export PYTHONPATH=../libs/:$PYTHONPATH
+export PYTHONPATH=../libs/pyNeuro/:$PYTHONPATH
 
 mkdir -p ../figures ../results
 SCRIPTS=../scripts
